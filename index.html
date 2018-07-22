@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>GALERIA-HEBERT-VUEJS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,25 +20,35 @@
     <div class="contenido">
       <ul class="ullista" v-if="cambiar=='ullista'">
         <li class="lista" v-for="a in articulos">
-          <img class="imglista" v-bind:src="a.image.imagelista" alt="">
+          <img class="imglista" v-bind:src="a.image.imagelista"
+          v-on:click="modal = 'mostrarmodal' , ruta = a.image.imagecuadricula , title2 = a.title , descrip2 = a.description">
           <span class="contxto">
             <p class="title">{{a.title}}</p>
             <p class="des">{{a.description}}</p>
           </span>
         </li>
+        <div class="modal" v-bind:class="{'ocultar': modal =='ocultarmodal'}">
+            <p class="btnclose" v-on:click="modal = 'ocultarmodal'">x</p>
+            <div class="imgtitle">
+              <img class="imgmodals" v-bind:src="ruta" alt="">
+              <div class="titlemodal">{{title2}}</div>
+              <div class="holaxd">{{descrip2}}</div>
+            </div>
+        </div>
       </ul>
 
       <ul class="ulcuadricula" v-if="cambiar=='ulcuadricula'">
         <li class="cuadricula" v-for="a in articulos">
           <img class="imgcuadricula" v-bind:src="a.image.imagecuadricula"
-           v-on:click="modal = 'mostrarmodal' , ruta = a.image.imagecuadricula , title2 = a.title" alt="">
+           v-on:click="modal = 'mostrarmodal' , ruta = a.image.imagecuadricula , title2 = a.title , descrip2 = a.description" alt="">
           <div class="hovertitle">{{a.title}}</div>
         </li>
         <div class="modal" v-bind:class="{'ocultar': modal =='ocultarmodal'}">
             <p class="btnclose" v-on:click="modal = 'ocultarmodal'">x</p>
             <div class="imgtitle">
-              <div class="titlemodal">{{title2}}</div>
               <img class="imgmodals" v-bind:src="ruta" alt="">
+              <div class="titlemodal">{{title2}}</div>
+              <div class="holaxd">{{descrip2}}</div>
             </div>
         </div>
       </ul>

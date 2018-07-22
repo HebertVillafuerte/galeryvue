@@ -134,7 +134,7 @@ img{
 .hovertitle{
   width: 100%;
   height: 50px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.8);
   position: absolute;
   text-align: center;
   line-height: 50px;
@@ -148,7 +148,6 @@ img{
 }
 .imgcuadricula:hover + .hovertitle{
   opacity: 1;
-
 }
 
 .hovertitle:hover{
@@ -198,21 +197,6 @@ img{
 
 
 
-.imgmodals{
-  width: 800px;
-  height: auto ;
-  position: relative;
-  cursor: pointer;
-  display: block;
-}
-
-.imgmodals:hover + .titlemodal{
-  border: 1px solid white;
-}
-
-
-
-
 .contmodalimgdes{
   width: 900px;
   height: 500px;
@@ -228,13 +212,40 @@ img{
   display: block;
 }
 
+.imgtitle{
+  position: relative;
+}
+
+
+.imgmodals{
+  width: 700px;
+  height: auto ;
+  cursor: pointer;
+  display: block;
+}
 
 .titlemodal{
-  width: 800px;
-  height: 30px;
+  width: 700px;
+  height: 40px;
   color: white;
-  background: black;
   position: absolute;
-  z-index: 5;
-  opacity: 0.5;
+  background: rgba(0,0,0,0.8);
+  top: 0;
+  opacity: 0;
+  line-height: 40px;
+  transition: all 0.3s;
+}
+
+.imgmodals:hover + .titlemodal{
+  opacity: 1;
+}
+
+.titlemodal:hover{
+  opacity: 1;
+}
+
+.holaxd{
+  height: 50px;
+  width: 700px;
+  color: white;
 }

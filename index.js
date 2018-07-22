@@ -1,10 +1,11 @@
 new Vue({
   el:'#aplicacion',
   data:{
-    cambiar:'ulcuadricula',
+    cambiar:'ullista',
     modal:'ocultarmodal',
     ruta:'',
     title2:'',
+    descrip2:'',
     articulos:[{
       "title":"Catedral Arequipa",
       "description":"Hermosa vista de la catedral arequipa",
@@ -22,7 +23,7 @@ new Vue({
       }
     },
     {
-      "title":"Bellisima torre ifel -Paris",
+      "title":"Bellisima torre  Eiffel -Paris",
       "description":"Bonito atardecer de la torre ifel",
       "image":{
         "imagelista":"3.jpg",
