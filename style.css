@@ -1,0 +1,240 @@
+*{
+  margin:0 ;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+
+
+body{
+  font-family: 'roboto';
+  color: #001f3f ;
+}
+
+h1{
+  color: white;
+  line-height: 50px;
+  margin: 0 10px;
+}
+
+.bar{
+  width: 600px;
+  height: 50px;
+  background: orangered;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.contoptions{
+  height:50px;
+  display: flex;
+}
+
+.ulmenu{
+  list-style: none;
+  height: 50px;
+  margin: 0 5px;
+}
+
+a{
+  display: block;
+  height: 50px;
+  color:white;
+  text-decoration: none;
+  padding: 0 5px;
+}
+
+img{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: 5px 0;
+}
+
+.contenido{
+  width: 600px;
+  margin: auto;
+  height: 500px;
+  overflow: auto;
+  border: 0.1px solid rgba(0,0,0,0.2)
+}
+
+/* todo sobre la vista lista*/
+
+
+
+.lista{
+  width: 570px;
+  margin:5px auto;
+  height: 100px;
+  box-shadow: -1px 1px 9px 3px rgba(0,0,0,0.2);
+  background: white;
+  display: flex;
+}
+
+.imglista{
+  width: 180px;
+  height: 100px;
+  margin: 0;
+}
+
+
+.title{
+  font-size: 25px;
+}
+
+.title , .des{
+  margin: 5px;
+}
+.contxto{
+  box-shadow: -1px 1px 9px 3px rgba(0,0,0,0.2);
+  margin: 5px;
+  width: 380px;
+}
+
+/* todo sobre la vista cuadricula-----*/
+
+.ulcuadricula{
+  width: 570px;
+  margin: auto;
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+}
+
+.cuadricula{
+  width: 182px;
+  height: 182px;
+  background: black;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: -1px 1px 9px 3px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.imgcuadricula{
+  margin: 0;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.activado{
+  background-color: rgba(0,0,0,0.2);
+}
+
+.hovertitle{
+  width: 100%;
+  height: 50px;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  transition: all 0.6s;
+  opacity: 0;
+  cursor:pointer;
+  top: 0;
+  color: white;
+  font-size: 12px;
+
+}
+.imgcuadricula:hover + .hovertitle{
+  opacity: 1;
+
+}
+
+.hovertitle:hover{
+  opacity: 1;
+}
+
+.modal{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.btnclose{
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  color: white;
+  font-size: 20px;
+  border: 1px solid white;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btnclose:hover{
+  background-color: white;
+  color: black;
+}
+
+.btnclose:active{
+  transform:scale(0.9)
+}
+
+
+
+
+.imgmodals{
+  width: 800px;
+  height: auto ;
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+
+.imgmodals:hover + .titlemodal{
+  border: 1px solid white;
+}
+
+
+
+
+.contmodalimgdes{
+  width: 900px;
+  height: 500px;
+  display: flex;
+  background: black;
+}
+
+.ocultar{
+  display: none;
+}
+
+.mostrar{
+  display: block;
+}
+
+
+.titlemodal{
+  width: 800px;
+  height: 30px;
+  color: white;
+  background: black;
+  position: absolute;
+  z-index: 5;
+  opacity: 0.5;
+}
