@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="aplicacion">
+    <div class="bar">
+      <h1>Posts</h1>
+      <div class="contoptions">
+        <ul class="ulmenu"><a href="#" v-bind:class="{'activado': cambiar =='ullista'}" v-on:click="cambiar ='ullista'"><img src="listablanco.png" alt=""></a></ul>
+        <ul class="ulmenu"><a href="#" v-bind:class="{'activado': cambiar =='ulcuadricula'}" v-on:click="cambiar ='ulcuadricula'"><img src="cuadriculablanco.png" alt=""></a></ul>
+      </div>
+    </div>
+
+    <div class="contenido">
+      <ul class="ullista" v-if="cambiar=='ullista'">
+        <li class="lista" v-for="a in articulos">
+          <img class="imglista" v-bind:src="a.image.imagelista" alt="">
+          <span class="contxto">
+            <p class="title">{{a.title}}</p>
+            <p class="des">{{a.description}}</p>
+          </span>
+        </li>
+      </ul>
+
+      <ul class="ulcuadricula" v-if="cambiar=='ulcuadricula'">
+        <li class="cuadricula" v-for="a in articulos">
+          <img class="imgcuadricula" v-bind:src="a.image.imagecuadricula"
+           v-on:click="modal = 'mostrarmodal' , ruta = a.image.imagecuadricula , title2 = a.title" alt="">
+          <div class="hovertitle">{{a.title}}</div>
+        </li>
+        <div class="modal" v-bind:class="{'ocultar': modal =='ocultarmodal'}">
+            <p class="btnclose" v-on:click="modal = 'ocultarmodal'">x</p>
+            <div class="imgtitle">
+              <div class="titlemodal">{{title2}}</div>
+              <img class="imgmodals" v-bind:src="ruta" alt="">
+            </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <script src="vue.js"></script>
+  <script src="index.js">
+
+  </script>
+</body>
+</html>
